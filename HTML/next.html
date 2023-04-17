@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>下一页</title>
+</head>
+<body>
+    <button>我没被触发</button>
+    <script>
+        const tag = document.querySelector("button");
+
+        window.addEventListener("message", event => {
+        // 检查消息来源
+        if (event.origin !== "file://D:\Alearn\专业实习\Web_Team\HTML\previous.html") {
+            console.log("wrong resource");
+        }else {
+        // 处理收到的消息
+            change();
+        }
+        });
+
+        function change() {
+            // 点击事件处理程序
+            tag.innerText = '我被触发了';
+        }
+    </script>
+</body>
+</html>

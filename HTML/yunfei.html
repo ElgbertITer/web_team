@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>东封快递——运费查询</title>
+    <link rel="stylesheet" href="../Loads/font_3930829_kadvoc28jyo/iconfont.css">
+    <link rel="stylesheet" href="../CSS/Less/index.css">
+    <link rel="stylesheet" href="../CSS/Less/base.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <style>
+        .content {
+            margin-left: 300px;
+        }
+        .content h1,.content h3,.content h4 {
+            padding-left: 5px;
+            margin-bottom: 50px;
+            border-left: 5px solid red;
+        }
+        .content h1 {
+            margin-top: 50px;
+        }
+        .content p {
+            display: inline-block;
+            width: 900px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="topNav">
+            <ul id="topNav">
+                <a href="./index.html"><img src="../Images/logo.png" alt="logo"></a>
+                <li><a href="./index.html">首页</a></li>
+                <li><a href="./jishu.html">技术</a></li>
+                <li><a href="./fuwu.html">服务</a></li>
+                <li><a href="./aboutUs.html">关于我们</a></li>
+                <li><a href="./login.html" class="login">登录/注册</a></li>
+                <li><a href="./mapBaidu2.html" target="_blank">
+                    <span class="iconfont icon-position" style="color: red;font-size: 32px;"></span>
+                    <span> 当前位置： </span><span id="location"></span>
+                </a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <h1>
+                东封快递运费计算标准
+            </h1>
+            <div id="No1">
+                <h3>
+                    一、运费计算基于以下计费规则：
+                </h3>
+                <h4>
+                    1.体积重量计算方法
+                </h4>
+                <p>
+                    托寄物的计费重量取体积重量与实际重量两者之间的较大值，若为子母件，则将每件的计费重量进行汇总后计算总运费，其中，体积重量的计算方法为：
+
+                    【 即日 / 特快 】
+
+                    同城、省内以及经济区域内互寄，体积重量 = 长 (cm)× 宽 (cm)× 高 (cm)÷12000 ；
+
+                    省外、跨经济区域互寄，体积重量 = 长 (cm)× 宽 (cm)× 高 (cm)÷6000 ；
+
+                    （经济区域包含：京津冀区域、江浙沪皖区域，川渝区域，黑吉辽区域）；
+
+                    【 标快 】
+
+                    中国内地大部分流向互寄，当实际重量30kg以下，体积重量 = 长 (cm)× 宽 (cm)× 高 (cm)÷12000 ；当实际重量30kg及以上，体积重量 = 长 (cm)× 宽 (cm)× 高 (cm)÷6000。
+
+                    西藏昌都市与中国内地其他地区互寄，体积重量 = 长 (cm)× 宽 (cm)× 高 (cm)÷6000。
+
+                    【 卡航 / 冷运标快 】 体积重量 = 长 (cm)× 宽 (cm)× 高 (cm)÷6000 ；
+
+                    【 冷运大件 】 体积重量 = 长 (cm)× 宽 (cm)× 高 (cm)÷3000 ；
+
+                    【港澳台（服务）】   体积重量 = 长 (cm)× 宽 (cm)× 高 (cm)÷6000；
+
+                    【国际快递（服务）】 体积重量 = 长 (cm)× 宽 (cm)× 高 (cm) ÷5000；
+
+                    【同城半日达/同城次日达】体积重量 = 长 (cm)× 宽 (cm)× 高 (cm) ÷6000；
+
+                    其他产品计算方法请致电 95338 或咨询当地收派员。
+                </p>
+                <h4>
+                    2. 计费重量小数点进位处理方式
+                </h4>
+                <p>
+                    【中国内地互寄业务】 中国内地互寄业务：10kg以下，续重以0.1kg为计重单位；10-100kg，续重以0.5kg为计重单位；100kg及以上，四舍五入取整数。
+
+                    【港澳本地业务】 续重以0.5kg为计重单位，不足 0.5kg，按0.5kg计。
+
+                    【中国内地始发至港澳台业务】100kg以下 , 续重以0.5kg为计重单位，不足0.5kg ，按0.5kg 计； 100kg及以上，以1kg为计重单位，小数点后尾数大于零的，向上进位至下一个1kg 。
+
+                    【中国内地始发至海外国家及地区业务】20kg以下 , 续重以0.5kg为计重单位，不足0.5kg，按 0.5kg计；20kg及以上，以1kg为计重单位，小数点后尾数大于零的，向上进位至下一个1kg。
+                </p>
+                <h4>
+                    3. 运费计算结果处理方式
+                </h4>
+                <p>
+                    运费计算结果按四舍五入取整数值；
+
+                    运费不含任何增值服务费用，以上运费计费规则可能因产品或所在地区不同而有所差异，详情致电 95338 或咨询当地收派员
+                </p>
+            </div>
+            <div id="No2">
+                <h3>
+                    二、保价、燃油附加费计算结果处理方式
+                </h3>
+                <p>
+                    保价、燃油附加费（中国香港、澳门、台湾地区至中国内地、中国内地及港澳台地区至海外国家、中国港澳台地区互寄）；计算结果按四舍五入取整【取货币单位元的整数值】；
+                    燃油附加费（中国内地互寄、中国内地至港澳台地区），计算结果按四舍五入取一位小数【取货币单位元后一位小数】。
+                </p>
+            </div>
+            <div id="No3">
+                <h3>
+                    温馨提示：
+                </h3>
+                <h4>
+                    1.时效标准
+                </h4>
+                <p>
+                    预计时效因节假日、天气、交通管控、资源等原因不同日期时间查询会有所差异，具体以系统实时返回为准。
+                </p>
+                <h4>
+                    2.始发地或目的地任一方为港澳台地区
+                </h4>
+                <p>
+                    以上查询的流向价格与时效仅供参考。具体服务及收费详情，请致电中国内地客户服务热线95338。
+
+                    以上查询的流向运费已包含燃油附加费（请 按此 了解更多燃油附加费的资料），但未包含清关税费、正式报关服务费、特殊处理费等可能产生的其他费用。
+
+                    如收派件地址为 中国香港偏远地区 或 中国台湾偏远地区 ，收派时效需增加0.5-1个工作日。
+                </p>
+                <h4>
+                    3.始发地或目的地任一方为海外国家
+                </h4>
+                <p>
+                    (1)以上查询的流向价格与时效仅供参考。具体服务及收费详情，请致电国际业务客服专线 95338.<br/><br/>
+
+                    (2)以上查询的流向运费已包含燃油附加费（请 按此 了解更多燃油附加费的资料），但未包含清关税费、偏远地区附加费、住宅派送附加费、特殊处理费等可能产生的其他费用。<br/><br/>
+
+                    (3)时效标准天数是指工作日，不包含收件日，不包括周末和节假日。具体派送时效以目的地邮编为准。如遇偏远地区或郊区、航班延误、清关异常等情形，时效会额外增加。时效为参考时效，非承诺时效。<br/><br/>
+
+                    (4)在清关资料齐全且不存在自扣与海关扣等风险或异常的情况，以下情况需在参考时效的基础上增加时长：中国内地、港澳台进口的个人物品和正式报关货件增加 1-2 个工作日，中国内地进口的分运行李货件增加 2-4 个工作日，中国内地、港澳台出口的正式报关货件增加 1 个工作日，海外国家进口的正式报关货件增加 2-3 个工作日。<br/><br/>
+
+                    (5)为降低因收发件人信息、申报品名不完整或错误及申报价值不符等原因导致的清关风险；收发件人信息必须真实有效，托寄物品名需写明材质和用途，托寄物价值必须如实申报。如因以上原因造成的查验延误，及产生的相关所有费用将与相关税费一起向寄件人或者收件人收取。
+                </p>
+            </div>
+        </div>
+        <div class="footerNav">
+            <ul id="jishu">
+                <h3>技术</h3>
+                <li><a href="./jishu.html">技术介绍</a></li>
+            </ul>
+            <ul id="fuwu">
+                <h3>服务</h3>
+                <li><a href="./fuwu.html">快递服务</a></li>
+                <li><a href="./fuwu.html">冷运服务</a></li>
+                <li><a href="./fuwu.html">医药服务</a></li>
+                <li><a href="./fuwu.html">国际服务</a></li>
+            </ul>
+            <ul id="kefu">
+                <h3>联系客服</h3>
+                <li><a href="./kefu.html">在线客服</a></li>
+            </ul>
+            <ul id="aboutUs">
+                <h3>关于我们</h3>
+                <li><a href="./aboutUs.html">关于东封</a></li>
+                <li><a href="./kefu.html">合作咨询</a></li>
+                <li><a href="./xinwen.html">新闻资讯</a></li>
+                <li><a href="./kefu.html">我要举报</a></li>
+            </ul>
+        </div>
+
+        <div class="policy">
+            <ul id="policy">
+                <li><a href="./use.html">使用条款</a><span class="iconfont">|</span></li>
+                <li><a href="./yinsizhengce.html">隐私政策</a><span class="iconfont">|</span></li>
+                <li><a href="./fuwutiaokuan.html">服务条款</a></li>
+            </ul>
+            <span id="security">
+                <a id="security1" href="https://webcert.cnmstl.net/cert/code?sn=c6cc6af3fac440c28901c15a104582fe">
+                    <img src="../Images/security1.png" alt="图片无法加载">
+                </a>
+                <a id="security2" href="https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030502003091">
+                    <img src="../Images/seculity2.png" alt="图片无法加载">
+                    <span>粤公网安备01234567891234号</span>
+                </a>
+            </span>
+        </div>
+    </div>
+        <!-- 使用Baidu Map JavaScript API获取用户具体的地理位置 -->
+<script src="https://api.map.baidu.com/api?v=3.0&ak=OAtoG8rWv4xVTkgxyHLGs9VKrWNaerUN"></script>
+<script>
+    var lc = document.getElementById("location");
+    function getLocation() {
+        var geolocation = new BMap.Geolocation();
+        geolocation.getCurrentPosition(function (position) {
+            var lng = position.longitude;
+            var lat = position.latitude;
+            var point = new BMap.Point(lng, lat);
+            var geoc = new BMap.Geocoder();
+            geoc.getLocation(point, function (rs) {
+                var addComp = rs.addressComponents;
+                var address = addComp.province + addComp.city + addComp.district + addComp.street + addComp.streetNumber;
+                // console.log(address);测试用
+                lc.innerText = address;
+            });
+        }, function () {
+            lc.innerText = "获取位置失败！";
+        });
+    }
+    window.onload = getLocation;
+</script>
+</body>
+</html>

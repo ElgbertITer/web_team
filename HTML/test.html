@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>测试用</title>
+</head>
+<body>
+    <div class="container">
+        <span id="error" style="color: red;"></span><br>
+        <input type="text" id="e-mail" placeholder="e-mail" checked><br>
+        <input type="password" id="passWord" placeholder="passWord" checked><br>
+        <input type="text" id="code" placeholder="code"><br><button id="send">send</button><br>
+        <input type="submit" id="submit" value="Logon">
+        <script src="../lib/jquery-3-6-4/node_modules/jquery/dist/jquery.js"></script>
+    </div>
+    <!-- 获取输入框中的值并且进行验证 -->
+    <script>
+        const error_msg = document.getElementById('error');
+        const emailInput = document.getElementById('e-mail');
+        const passwordInput = document.getElementById('passWord');
+        const codeInput = document.getElementById('code');
+        const sendBtn = document.getElementById('send');
+        const submitBtn = document.getElementById('submit');
+
+        let email = '';
+        let password = '';
+        let code = '';
+
+        emailInput.addEventListener('input', (event) => {
+            email = event.target.value.trim();
+            validateEmail(email);
+        });
+
+        passwordInput.addEventListener('input', (event) => {
+            password = event.target.value.trim();
+            validatePassword(password);
+        });
+
+        codeInput.addEventListener('input', (event) => {
+            code = event.target.value.trim();
+        });
+
+        function validateEmail(email) {
+            // 验证邮箱格式
+            const regex = /^[^\s@]+@[^\s@]+\.com$/;
+            if(!regex.test(email)){
+                error_msg.innerText = '邮箱格式错误，正确示例:012345678@163.com';
+            }else {
+                error_msg.innerText = '';
+            }
+        }
+
+        function validatePassword(password) {
+            // 验证密码格式
+            const regex = /^[a-zA-Z0-9_]{6,16}$/;
+            if(!regex.test(password)){
+                error_msg.innerText = '密码格式错误，密码由6-16位英文/数字/下划线组成';
+            }else {
+                error_msg.innerText = '';
+            }
+        }
+    </script>
+    <!-- 点击“发送验证码”按钮后，使用 Ajax 发送请求，并且倒计时 60 秒。 -->
+    <script>
+        let timer = null;
+
+        sendBtn.addEventListener('click', () => {
+            if (!email) {
+                error_msg.innerText = '请先输入邮箱';
+                return;
+            }
+
+            // 发送请求，获取验证码
+            ajax({
+                url: '/send-code',
+                data: {
+                    email: email
+                },
+                success: function (response) {
+                    alert('验证码已发送，请注意查收');
+                    startCountdown();
+                },
+                error: function () {
+                    alert('发送验证码失败，请稍后再试');
+                }
+            });
+        });
+
+        function startCountdown() {
+            let count = 60;
+            sendBtn.disabled = true;
+            sendBtn.innerText = `重新发送 (${count}s)`;
+
+            timer = setInterval(() => {
+                count--;
+                if (count === 0) {
+                    clearInterval(timer);
+                    sendBtn.disabled = false;
+                    sendBtn.innerText = '发送验证码';
+                } else {
+                    sendBtn.innerText = `重新发送 (${count}s)`;
+                }
+            }, 1000);
+        }
+    </script>
+    <!-- 用户输入邮箱、密码和验证码后，点击“提交”按钮，使用 Ajax 发送请求，将用户信息插入到数据库中 -->
+    <script>
+        submitBtn.addEventListener('click', () => {
+            if (!email || !password || !code) {
+                alert('请填写完整信息');
+                return;
+            }
+
+            // 发送请求，验证验证码是否正确
+            ajax({
+                url: '/validate-code',
+                data: {
+                    email: email,
+                    code: code
+                },
+                success: function (response) {
+                    // 验证码正确，插入用户信息
+                    ajax({
+                        url: '/insert-user',
+                        data: {
+                            email: email,
+                            password: password
+                        },
+                        success: function (response) {
+                            alert('注册成功');
+                            // 自动登录
+                            window.location.href = '/login';
+                        },
+                        error: function () {
+                            alert('插入用户信息失败，请稍后再试');
+                        }
+                    });
+                },
+                error: function () {
+                    alert('验证码不正确，请重新输入');
+                }
+            });
+        });
+
+    </script>
+</body>
+</html>

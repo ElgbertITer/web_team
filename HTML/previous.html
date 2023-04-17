@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>源页面</title>
+</head>
+<body>
+    <button>点我</button>
+    <script>
+        const tag = document.querySelector("button");
+        tag.addEventListener("click", () => {
+        const message = "click";
+        const targetWindow = window.open("next.html", "targetWindow"); // 打开目标页面
+        targetWindow.postMessage(message, "D:\Alearn\专业实习\Web_Team\HTML\previous.html"); // 发送消息
+        });
+
+    </script>
+</body>
+</html>

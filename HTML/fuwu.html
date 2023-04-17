@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>东封快递——服务</title>
+    <link rel="stylesheet" href="../Loads/font_3930829_kadvoc28jyo/iconfont.css">
+    <link rel="stylesheet" href="../CSS/Less/index.css">
+    <link rel="stylesheet" href="../CSS/Less/base.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../CSS/Less/fuwu.css">
+
+</head>
+<body>
+    <!-- <script src="../JS/Map.js"></script> -->
+
+    <div class="container">
+        <div class="topNav">
+            <ul id="topNav">
+                <a href="./index.html"><img src="../Images/logo.png" alt="logo"></a>
+                <li><a href="./index.html">首页</a></li>
+                <li><a href="./jishu.html">技术</a></li>
+                <li><a href="./fuwu.html">服务</a></li>
+                <li><a href="./aboutUs.html">关于我们</a></li>
+                <li><a href="./login.html" class="login">登录/注册</a></li>
+                <li><a href="./mapBaidu2.html" target="_blank">
+                    <span class="iconfont icon-position" style="color: red;font-size: 32px;"></span>
+                    <span> 当前位置： </span><span id="location"></span>
+                </a></li>
+            </ul>
+        </div>
+        <div class="service">
+            <ul id="service">
+                <li><a href="#"><span>快递服务</span></a></li>
+                <li><a href="#"><span>冷运服务</span></a></li>
+                <li><a href="#"><span>医药服务</span></a></li>
+                <li><a href="#"><span>国际服务</span></a></li>
+            </ul>
+        </div>
+        <div class="serviceSelect">
+            <ul id="serviceSelect">
+                <li><a href="#"><span>我要寄件</span></a></li>
+                <li><a href="#"><span>我要查件</span></a></li>
+            </ul>
+        </div>
+        <div class="jijian">
+            <div class="sender">
+                <table id="sender">
+                    <th><span style="color: red;">寄方信息 </span><span style="font-size: 0.75em;color: rgb(158, 153, 153);"> 标*为必填项</span></th>
+                    <tr >
+                        <td>
+                            <span>*</span><span>姓名</span><br/>
+                            <input type="text" placeholder="请填写真实姓名" required>
+                        </td>
+                        <td>
+                            <span>*</span><span>联系电话</span><br/>
+                            <input type="text" placeholder="请填写有效手机号" required>
+                        </td>
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>*</span><span>省市区</span><br/>
+                            <input type="text" placeholder="请输入所在省市区" required>
+                        </td>
+                        <td>
+                            <span>*</span><span>详细地址</span><br/>
+                            <input type="text" placeholder="请输入所在详细地址" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span style="color: black;">公司名称</span><br/>
+                            <input type="text" placeholder="请输入公司名称">
+                        </td>
+                        <td>
+                            <span>*</span><span>批量寄件？</span><br/>
+                            <input type="text" placeholder="＜10件输入1，＞10件输入件数" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <form action="" method="post" name="sendType">
+                                <span style="color: black;">国内普通快递</span><input type="checkbox">
+                                <span>国内冷运服务</span><input type="checkbox">
+                            </form>
+                        </td>
+                        <td>
+                            <form action="" method="post">
+                                <span style="color: black;">国内医药服务</span><input type="checkbox">
+                                <span>国内大件快递(20kg+)</span><input type="checkbox">
+                            </form>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="receiver">
+                <table id="receiver">
+                    <th><span style="color: red;">收方信息 </span><span style="font-size: 0.75em;color: rgb(158, 153, 153);"> 标*为必填项</span></th>
+                    <tr>
+                        <td>
+                            <span>*</span><span>姓名</span><br/>
+                            <input type="text" placeholder="请填写真实姓名">
+                        </td>
+                        <td>
+                            <span>*</span><span>联系电话</span><br/>
+                            <input type="text" placeholder="请填写有效手机号">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>*</span><span>省市区</span><br/>
+                            <input type="text" placeholder="请输入所在省市区">
+                        </td>
+                        <td>
+                            <span>*</span><span>详细地址</span><br/>
+                            <input type="text" placeholder="请输入所在详细地址">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span style="color: black;">公司名称</span><br/>
+                            <input type="text" placeholder="请输入公司名称">
+                        </td>
+                        <td>
+                            <span style="color: black;">备注</span><br/>
+                            <input type="textarea" placeholder="请输入备注">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <form action="" method="post" name="sendType">
+                                <span style="color: black;">在线支付</span><input type="checkbox">
+                                <span>线下支付</span><input type="checkbox">
+                                <span>货到付款</span><input type="checkbox">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input id="okSend" type="submit" value="提交订单" style="font-size: 20px;background-color: red;border-radius: 20px;color: #fff;">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="chajian">
+            <div class="cjNav">
+                <h3>我的包裹</h3>
+                <ul id="cjNav">
+                    <li><span>当前订单</span></li>
+                    <li><span>历史订单</span></li>
+                </ul>
+            </div>
+            <div class="cjNullPack">
+                <svg t="1678158414295" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3483" width="200" height="200"><path d="M512.89 224.97l0.91 320.02-278.5 160.79-0.9-320.02z" fill="#D8A066" p-id="3484"></path><path d="M512.02 866.48L234.4 705.25V385.76l276.71 160.71zM790.52 705.69l-277.21-160.7-0.42-320.02 276.72 160.71z" fill="#DCAB78" p-id="3485"></path><path d="M789.61 385.68l0.91 320.01-278.5 160.79-0.91-320.01z" fill="#D8A066" p-id="3486"></path><path d="M663.61 779.67l-0.22-76.4-36.65 21.16v76.53z" fill="#FFFFFF" opacity=".5" p-id="3487"></path><path d="M335.06 737.69l-81.25-47.22-0.26-93.96 81.24 47.22z" fill="#FFFFFF" opacity=".5" p-id="3488"></path><path d="M320.63 656.46l-0.02-7.24-52.63-30.59 0.02 7.24zM320.63 673.17l-0.02-7.24-52.63-30.59 0.02 7.24zM320.63 689.87l-0.02-7.24-52.63-30.58 0.02 7.24z" fill="#DCAB78" p-id="3489"></path><path d="M627.19 616.44l-116.08-67.45v-2.47l116.08 67.45zM905.69 455.61l-278.5 160.83v-2.47l278.5-160.83z" fill="#BB8B55" p-id="3490"></path><path d="M905.69 453.13l-116.08-67.45-278.5 160.83 116.08 67.46z" fill="#F1C18F" p-id="3491"></path><path d="M512.9 224.97l-116.07-67.45-278.52 160.83 116.08 67.46z" fill="#F1C18F" p-id="3492"></path><path d="M512.89 224.97l116.08-67.45 276.71 160.7-116.07 67.46z" fill="#F1C18F" p-id="3493"></path><path d="M395.03 616.44l116.08-67.45v-2.47l-116.08 67.45z" fill="#BB8B55" p-id="3494"></path><path d="M118.67 455.69l276.36 160.75v-2.47L118.67 453.22z" fill="#BB8B55" p-id="3495"></path><path d="M118.67 453.22l116.07-67.46 276.37 160.76-116.07 67.45z" fill="#F1C18F" p-id="3496"></path></svg>
+                <p>暂无运单信息</p>
+                <a href="./fuwu.html" target="_self" id="xiadan">马上下单</a>
+            </div>
+            <div class="cjPack">
+                <table>
+                    <th>订单号</th>
+                    <th>订单类型</th>
+                    <th>订单状态</th>
+                    <th>支付类型</th>
+                    <th>下单时间</th>
+                    <th>操作</th>
+                </table>
+            </div>
+            <div class="historyPack">
+                <div class="Null">
+                    <span></span>
+                </div>
+                <div class="notNull">
+                    <table>
+                        
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <ol>
+                <li>
+                    <h3>收费标准</h3>
+                    <p>
+                        1.计费规则：首重（1KG）+续重，根据不同的流向价格会有所差异，具体流向价格以东封快递官网系统查询为准
+                        2.计抛规则：长*宽*高(cm)/6000=体积（轻抛）重量，体积（轻抛）重量和实际重量取较大值计费。
+                    </p>
+                </li>
+                <li>
+                    <h3>覆盖范围</h3>
+                    <p>
+                        中国内地地区，具体服务范围以东封快递官网系统查询为准。
+                    </p>
+                </li>
+                <li>
+                    <h3>承诺时效</h3>
+                    <p>
+                        整体不超过5天，具体流向时效以东封快递官网系统查询为准
+                    </p>
+                </li>
+                <li>
+                    <h3>服务须知</h3>
+                    <p>
+                        客户类型：仅限月结客户，需签订《物流及物流辅助服务合同（主合同）》和《冷运标快产品协议》。
+                        托寄物内容：加工食品、初级农产品（冷藏/冷冻/深冻运输的产品）单件不超过15kg（含包材），允许操作子母件，单票不超过50kg（含包材）。
+                        托寄物温区：冷藏、冷冻、深冻。
+                        客户资质要求：根据托寄物的内容，需要提供相应的资质。
+                    </p>
+                </li>
+            </ol>
+        </div>
+        <div class="footerNav">
+            <ul id="jishu">
+                <h3>技术</h3>
+                <li><a href="./jishu.html">技术介绍</a></li>
+            </ul>
+            <ul id="fuwu">
+                <h3>服务</h3>
+                <li><a href="./fuwu.html">快递服务</a></li>
+                <li><a href="./fuwu.html">冷运服务</a></li>
+                <li><a href="./fuwu.html">医药服务</a></li>
+                <li><a href="./fuwu.html">国际服务</a></li>
+            </ul>
+            <ul id="kefu">
+                <h3>联系客服</h3>
+                <li><a href="./kefu.html">在线客服</a></li>
+            </ul>
+            <ul id="aboutUs">
+                <h3>关于我们</h3>
+                <li><a href="./aboutUs.html">关于东封</a></li>
+                <li><a href="./kefu.html">合作咨询</a></li>
+                <li><a href="./xinwen.html">新闻资讯</a></li>
+                <li><a href="./kefu.html">我要举报</a></li>
+            </ul>
+        </div>
+        <div class="policy">
+            <ul id="policy">
+                <li><a href="./use.html">使用条款</a><span class="iconfont">|</span></li>
+                <li><a href="./yinsizhengce.html">隐私政策</a><span class="iconfont">|</span></li>
+                <li><a href="./fuwutiaokuan.html">服务条款</a></li>
+            </ul>
+            <span id="security">
+                <a id="security1" href="https://webcert.cnmstl.net/cert/code?sn=c6cc6af3fac440c28901c15a104582fe">
+                    <img src="../Images/security1.png" alt="图片无法加载">
+                </a>
+                <a id="security2" href="https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030502003091">
+                    <img src="../Images/seculity2.png" alt="图片无法加载">
+                    <span>粤公网安备01234567891234号</span>
+                </a>
+            </span>
+        </div>
+    </div>
+
+    <!-- 使用Baidu Map JavaScript API获取用户具体的地理位置 -->
+    <script src="https://api.map.baidu.com/api?v=3.0&ak=OAtoG8rWv4xVTkgxyHLGs9VKrWNaerUN"></script>
+    <script src="../JS/Map.js"></script>
+
+    <!-- 获取用户名 -->
+    <script src="../JS/getUsernameOnly.js"></script>
+
+    <!-- 设置动态页面 -->
+    <script src="../JS/fuwu.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>获取用户地理位置信息</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <style>
+    body,
+    html,
+    #container {
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        font-family: "微软雅黑";
+    }
+    </style>
+    <script src="https://api.map.baidu.com/api?v=3.0&ak=OAtoG8rWv4xVTkgxyHLGs9VKrWNaerUN"></script>
+    <script>
+        function getLocation() {
+            var geolocation = new BMap.Geolocation();
+            geolocation.getCurrentPosition(function (position) {
+                var lng = position.longitude;
+                var lat = position.latitude;
+                var point = new BMap.Point(lng, lat);
+                var geoc = new BMap.Geocoder();
+                geoc.getLocation(point, function (rs) {
+                    var addComp = rs.addressComponents;
+                    var address = addComp.province + addComp.city + addComp.district + addComp.street + addComp.streetNumber;
+                    alert("您的位置：" + address);
+                });
+            }, function () {
+                alert("获取位置失败！");
+            });
+        }
+    </script>
+</head>
+<body onload="getLocation()">
+</body>
+</html>

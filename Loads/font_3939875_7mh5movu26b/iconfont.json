@@ -1,0 +1,16 @@
+{
+  "id": "3939875",
+  "name": "profile",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "17784119",
+      "name": "编辑",
+      "font_class": "bianji",
+      "unicode": "e62f",
+      "unicode_decimal": 58927
+    }
+  ]
+}

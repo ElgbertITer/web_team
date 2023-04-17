@@ -1,0 +1,39 @@
+body {
+    background-color: rgb(242, 242, 242);
+}
+.content {
+    margin-left: 303px;
+    margin-top: 5px;
+    padding-left: 18%;
+    padding-top: 2%;
+    display: inline-block;
+    width: 900px;
+    height: 500px;
+    background-color: #fff;
+}
+.content input[type=file] {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    background-color: rgb(215, 207, 207);
+    border-radius: 50%;
+}
+.content td,.content button {
+    display: inline-block;
+}
+.content td {
+    margin-top: 30px;
+    margin-right: 50px;
+}
+.content button {
+    margin-top: 40px;
+    width: 100px;
+    height: 50px;
+    background-color: red;
+    color: aliceblue;
+    border: none;
+    border-radius: 5px;
+}
+.content button:first-child {
+    margin-right: 10px;
+}

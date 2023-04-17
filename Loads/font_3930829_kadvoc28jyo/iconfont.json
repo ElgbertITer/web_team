@@ -1,0 +1,44 @@
+{
+  "id": "3930829",
+  "name": "专业实习网站项目",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "19473162",
+      "name": "纸箱打开",
+      "font_class": "zhixiangdakai18",
+      "unicode": "e62c",
+      "unicode_decimal": 58924
+    },
+    {
+      "icon_id": "10635169",
+      "name": "定位-位置",
+      "font_class": "position",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    },
+    {
+      "icon_id": "6237070",
+      "name": "竖线",
+      "font_class": "tubiaozhizuo-",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
+      "icon_id": "577402",
+      "name": "向右1",
+      "font_class": "xiangyou1",
+      "unicode": "e775",
+      "unicode_decimal": 59253
+    },
+    {
+      "icon_id": "10056821",
+      "name": "搜索",
+      "font_class": "sousuo",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    }
+  ]
+}

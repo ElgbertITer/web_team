@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>获取地理位置信息——谷歌</title>
+    <style>
+        body,
+        html,
+        #container {
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            font-family: "微软雅黑";
+        }
+        </style>
+</head>
+<body>
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script>
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            alert("Geolocation is not supported by this browser.");
+        }
+
+        function showPosition(position) {
+            var latitude = position.coords.latitude;
+            var longitude = position.coords.longitude;
+  
+            // 在这里调用地理编码函数，将经纬度信息转换为地理位置信息
+        }
+        var geocoder = new google.maps.Geocoder();
+
+        var latlng = new google.maps.LatLng(latitude, longitude);
+
+        geocoder.geocode({ 'latLng': latlng }, function (results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+            if (results[0]) {
+            var address = results[0].formatted_address;
+            // 在这里处理地理位置信息
+            } else {
+            alert("No results found");
+            }
+        } else {
+            alert("Geocoder failed due to: " + status);
+        }
+        });
+    </script>
+    <div id="map" style="width: 800px;height: 600px;"></div>
+</body>
+</html>

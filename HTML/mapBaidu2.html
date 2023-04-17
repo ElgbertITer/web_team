@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title>异步加载地图——百度</title>
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+
+    <style>
+    body,
+    html,
+    #container {
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        font-family: "微软雅黑";
+    }
+    .search {
+        width: 100%;
+        height: 50px;
+        background-color: rgb(242, 242, 242);
+    }
+    .search input {
+        display: inline-block;
+        margin-left: 30px;
+        margin-top: 10px;
+        border: none;
+    }
+    .search input[type="text"] {
+        padding-left: 10px;
+        padding-right: 5px;
+        width: 300px;
+        height: 30px;
+        background-color: #fff;
+        outline: none;
+        border-bottom: 1px solid rgb(124, 122, 122);
+
+    }
+    .search input[type="submit"] {
+        width: 35px;
+        height: 35px;
+        background-color: red;
+        color: #fff;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+    span {
+        margin-left: 100px;
+        color: red;
+    }
+    </style>
+    <script>
+        var map; // 声明全局变量map，以便在函数间共享
+        function loadJScript() {
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.src = 'https://api.map.baidu.com/api?type=webgl&v=1.0&ak=OAtoG8rWv4xVTkgxyHLGs9VKrWNaerUN&callback=init';
+            document.body.appendChild(script);
+        }
+        function init() {
+            map = new BMapGL.Map('container'); // 创建Map实例
+            var geolocation = new BMapGL.Geolocation();
+            geolocation.getCurrentPosition(function (r) {
+                if (this.getStatus() == BMAP_STATUS_SUCCESS) {
+                    var point = r.point;
+                    map.centerAndZoom(point, 16); // 将地图中心移动到当前位置，设置地图显示层级为16
+                    var marker = new BMapGL.Marker(point); // 创建标注
+                    map.addOverlay(marker); // 将标注添加到地图中
+                }
+            });
+            map.enableScrollWheelZoom(); // 启用滚轮放大缩小
+        }
+        window.onload = loadJScript; // 异步加载地图
+
+        function searchAddress() {
+            var address = document.getElementById("addressInput").value; // 获取输入框中的地址信息
+            if (address != "") {
+                var local = new BMapGL.LocalSearch(map, {
+                    onSearchComplete: function(results) {
+                        if (local.getStatus() == BMAP_STATUS_SUCCESS) {
+                            var point = results.getPoi(0).point; // 获取第一个搜索结果的坐标点
+                            map.centerAndZoom(point, 16); // 将地图中心移动到搜索结果，设置地图显示层级为16
+                            var marker = new BMapGL.Marker(point); // 创建标注
+                            map.addOverlay(marker); // 将标注添加到地图中
+                            var serviceArea = document.getElementById("serviceArea");
+                            serviceArea.innerText = "该地区全境提供服务"; // 在span标签中输出“该地区全境提供服务”
+                        } else {
+                            var serviceArea = document.getElementById("serviceArea");
+                            serviceArea.innerText = "该地址不存在，请输入正确的地理位置信息";
+                        }
+                    }
+                });
+                local.search(address); // 开始搜索
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="search">
+        <input id="addressInput" type="text" placeholder="请输入要查询的网点或地址">
+        <input type="submit" value="确定" onclick="searchAddress()">
+        <span id="serviceArea"></span>
+    </div>
+    <div id="container"></div>
+</body>
+</html>

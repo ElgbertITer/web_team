@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录</title>
+    <style>
+        body {
+            width: 60vw;
+            background-image: url(../Images/login.png);
+        }
+        form {
+            margin-left: 10%;
+        }
+        input{
+            padding-left: 8px;
+            padding-right: 10px;
+            margin-bottom: 1%;
+            border: none;
+            border-bottom: 2px solid rgb(100, 99, 99);
+            border-radius: 10px;
+            outline: none;
+        }
+        input[type=checkbox] {
+            border: 1px solid black;
+            border-radius: 2px;
+        }
+        input[type=submit] {
+            width: 100px;
+            height: 40px;
+            background-color: red;
+            font-size: 20px;
+            color: aliceblue;
+            cursor: pointer;
+        }
+        .remember {
+            display: flex;
+            align-items: center;
+        }
+        #errorMsg {
+            color: rgb(244, 239, 239);
+        }
+
+    </style>
+</head>
+<body>
+    <form action="./index.html" method="post">
+        <input type="text" placeholder="手机号" name="u_name" id="username"><br/>
+        <input type="password" placeholder="密码" name="pwd" id="password">
+        <div class="remeber">
+            <input type="checkbox" id="remember"><span>记住用户名</span>
+            <span id="errorMsg"></span>
+        </div>
+        <input type="submit" value="登 录" id="submit">
+    </form>
+    <script src="../JS/rememberUserName.js"></script>
+
+    <script src="../JS/format.js"></script>
+
+</body>
+</html>
